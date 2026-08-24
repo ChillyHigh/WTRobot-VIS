@@ -1,0 +1,91 @@
+@layer starlight.core {
+	:root {
+		--vis-blue: #005bac;
+		--vis-teal: #00bfa6;
+		--vis-orange: #ff5a36;
+		--vis-carbon: #111820;
+		--vis-alloy: #d7dadd;
+		--vis-text: #f5f7f8;
+		--vis-muted: #aeb7be;
+		--vis-panel: #172129;
+		--vis-preview: #202c34;
+		--vis-border: rgba(215, 218, 221, 0.18);
+		--vis-border-strong: rgba(215, 218, 221, 0.35);
+		--vis-header-muted: #d7dadd;
+		--vis-header-border: rgba(215, 218, 221, 0.18);
+		--sl-color-accent-low: color-mix(in srgb, var(--vis-blue) 20%, var(--vis-carbon));
+		--sl-color-accent: var(--vis-blue);
+		--sl-color-accent-high: #58a5ec;
+		--sl-color-bg: var(--vis-carbon);
+		--sl-color-bg-nav: #0d1318;
+		--sl-color-bg-sidebar: #121a20;
+		--sl-color-text: var(--vis-text);
+		--sl-color-text-accent: #66b1f4;
+		--sl-color-hairline: var(--vis-border);
+		--sl-color-hairline-light: rgba(215, 218, 221, 0.1);
+		--sl-color-white: #f5f7f8;
+		--sl-color-gray-1: var(--vis-text);
+		--sl-color-gray-2: var(--vis-muted);
+		--sl-color-gray-3: #7f8a92;
+		--sl-color-gray-4: #46535c;
+		--sl-color-gray-5: #29343c;
+		--sl-color-gray-6: #1d272e;
+		--sl-color-black: #090d10;
+		--sl-nav-height: 4.5rem;
+		--sl-content-width: 58rem;
+		--sl-sidebar-width: 17rem;
+	}
+
+	:root[data-theme='light'] {
+		--vis-text: #111820;
+		--vis-muted: #4d5b64;
+		--vis-panel: #ffffff;
+		--vis-preview: #f0f3f4;
+		--vis-border: rgba(17, 24, 32, 0.16);
+		--vis-border-strong: rgba(17, 24, 32, 0.3);
+		--vis-header-muted: #26343d;
+		--vis-header-border: rgba(17, 24, 32, 0.16);
+		--sl-color-bg: #f7f8f8;
+		--sl-color-bg-nav: #ffffff;
+		--sl-color-bg-sidebar: #eef1f2;
+		--sl-color-text: var(--vis-text);
+		--sl-color-text-accent: #005bac;
+		--sl-color-hairline: var(--vis-border);
+		--sl-color-hairline-light: rgba(17, 24, 32, 0.09);
+		--sl-color-gray-1: #111820;
+		--sl-color-gray-2: #4d5b64;
+		--sl-color-gray-3: #66747c;
+		--sl-color-gray-4: #a3adb2;
+		--sl-color-gray-5: #d0d6d8;
+		--sl-color-gray-6: #e7eaeb;
+		--sl-color-black: #ffffff;
+	}
+
+	::selection { background: var(--vis-orange); color: #fff; }
+	a:focus-visible, button:focus-visible, select:focus-visible { outline: 2px solid var(--vis-orange); outline-offset: 3px; }
+	.sl-markdown-content h2 { border-top: 1px solid var(--vis-border); padding-top: 1.4rem; }
+	.sl-markdown-content h2, .sl-markdown-content h3 { color: var(--vis-text); }
+	.sidebar-content a[aria-current='page'] {
+		border-inline-start: 3px solid var(--vis-orange);
+		background: color-mix(in srgb, var(--vis-blue) 28%, var(--vis-panel));
+		color: var(--vis-text);
+	}
+	.sidebar-content a[aria-current='page']:hover,
+	.sidebar-content a[aria-current='page']:focus { background: color-mix(in srgb, var(--vis-blue) 36%, var(--vis-panel)); color: var(--vis-text); }
+	.sl-markdown-content a:not([class]) { color: var(--vis-teal); text-decoration-color: color-mix(in srgb, var(--vis-teal) 50%, transparent); }
+	.sl-markdown-content a:not([class]):hover { color: var(--vis-orange); text-decoration-color: var(--vis-orange); }
+	.sl-markdown-content blockquote { border-inline-start-color: var(--vis-orange); background: color-mix(in srgb, var(--vis-orange) 7%, transparent); }
+	.sl-markdown-content table th { background: color-mix(in srgb, var(--vis-blue) 18%, var(--vis-panel)); }
+	.sl-markdown-content code { border-color: var(--vis-border); background: color-mix(in srgb, var(--vis-blue) 8%, var(--vis-panel)); }
+	.sl-markdown-content img { border: 1px solid var(--vis-border); }
+	.hero { border-bottom: 1px solid var(--vis-border); }
+	.vis-home-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: end; padding: 2rem 0 2.5rem; }
+	.vis-eyebrow { margin: 0 0 1rem; color: var(--vis-orange); font-family: var(--sl-font-system-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; }
+	.vis-home-intro h2 { max-width: 38rem; margin: 0; border: 0; padding: 0; font-size: clamp(2rem, 5vw, 4.25rem); line-height: 1.05; letter-spacing: 0; }
+	.vis-lede { max-width: 38rem; margin: 1.25rem 0 0; color: var(--vis-muted); font-size: 1rem; line-height: 1.8; }
+	.vis-home-mark { display: grid; place-items: center; width: clamp(6rem, 15vw, 12rem); aspect-ratio: 1; border: 1px solid var(--vis-blue); color: var(--vis-teal); font-family: var(--sl-font-system-mono); font-size: clamp(1.7rem, 4vw, 3rem); font-weight: 800; letter-spacing: 0.1em; }
+	.vis-section-links { margin: 1rem 0 3rem; }
+	.vis-color-grid, .color-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; }
+	@media (max-width: 55rem) { .vis-color-grid, .color-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+	@media (max-width: 40rem) { .vis-home-intro { grid-template-columns: 1fr; } .vis-home-mark { width: 6rem; } .vis-color-grid, .color-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+}

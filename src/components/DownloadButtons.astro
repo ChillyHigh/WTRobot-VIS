@@ -1,0 +1,60 @@
+---
+interface Download {
+	label: string;
+	file: string;
+	note?: string;
+}
+
+interface Props {
+	downloads: Download[];
+}
+
+const { downloads } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const resolveFile = (file: string) =>
+	/^https?:\/\//.test(file) ? file : `${base}${file.replace(/^\/+/, '')}`;
+---
+
+{downloads.length > 0 && (
+	<div class="download-list" aria-label="下载文件">
+		{downloads.map((download) => (
+			<a class="download-button" href={resolveFile(download.file)} download>
+				<span>{download.label}</span>
+				{download.note && <small>{download.note}</small>}
+			</a>
+		))}
+	</div>
+)}
+
+<style>
+	.download-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+	.download-button {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.45rem;
+		padding: 0.45rem 0.7rem;
+		border: 1px solid color-mix(in srgb, var(--vis-blue) 60%, transparent);
+		border-radius: 4px;
+		background: color-mix(in srgb, var(--vis-blue) 12%, transparent);
+		color: var(--vis-text);
+		font-size: 0.82rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+	}
+	.download-button:hover,
+	.download-button:focus-visible {
+		border-color: var(--vis-orange);
+		background: color-mix(in srgb, var(--vis-orange) 14%, transparent);
+		color: var(--vis-orange);
+	}
+	.download-button small {
+		color: var(--vis-muted);
+		font-weight: 500;
+	}
+</style>

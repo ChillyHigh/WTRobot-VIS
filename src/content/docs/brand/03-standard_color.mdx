@@ -1,0 +1,24 @@
+---
+title: 标准色
+description: 南工问天标准色、辅助色及配色结构。
+sidebar:
+  order: 3
+---
+
+import ColorSwatch from '../../../components/ColorSwatch.astro';
+
+问天蓝和凌天青是主要品牌色，信号橙用于强调和状态提示，碳黑与合金灰负责正文、结构和底色。
+
+<div class="color-grid">
+	<ColorSwatch name="问天蓝" hex="#005BAC" description="主色：标题、导航、主要链接。" />
+	<ColorSwatch name="凌天青" hex="#00BFA6" description="辅助色：分类、状态、信息提示。" />
+	<ColorSwatch name="信号橙" hex="#FF5A36" description="强调色：少量强调、hover、当前项。" />
+	<ColorSwatch name="碳黑" hex="#111820" description="正文、结构和深色底色。" />
+	<ColorSwatch name="合金灰" hex="#D7DADD" description="辅助文字、边框和浅色底。" textColor="#111820" />
+</div>
+
+## 使用原则
+
+- 信号橙应少量使用，避免成为大面积背景色。
+- 深色背景上使用纯白或合金灰文字，保证信息清晰。
+- 标志文件保持原始矢量版本；网页 UI 的颜色以本页标准色为准。

@@ -4,21 +4,43 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://chillyhigh.github.io',
+	base: '/WTRobot-VIS',
+	output: 'static',
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: '南工问天 VIS',
+			locales: {
+				root: { label: '简体中文', lang: 'zh-CN' },
+			},
+			customCss: ['./src/styles/vis.css'],
+			components: {
+				Header: './src/components/Header.astro',
+			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: '品牌规范',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ autogenerate: { directory: 'brand' } },
 					],
 				},
 				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
+					label: '素材归档',
+					items: [
+						{ autogenerate: { directory: 'assets' } },
+					],
+				},
+				{
+					label: '应用规范',
+					items: [
+						{ autogenerate: { directory: 'guidelines' } },
+					],
+				},
+				{
+					label: '周边设计',
+					items: [
+						{ autogenerate: { directory: 'merch' } },
+					],
 				},
 			],
 		}),

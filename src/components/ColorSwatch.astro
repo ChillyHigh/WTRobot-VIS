@@ -1,0 +1,26 @@
+---
+interface Props {
+	name: string;
+	hex: string;
+	description: string;
+	textColor?: string;
+}
+
+const { name, hex, description, textColor = '#FFFFFF' } = Astro.props;
+---
+
+<div class="swatch" style={`--swatch: ${hex}; --swatch-text: ${textColor}`}>
+	<div class="swatch-color">
+		<strong>{name}</strong>
+		<span>{hex}</span>
+	</div>
+	<p>{description}</p>
+</div>
+
+<style>
+	.swatch { overflow: hidden; border: 1px solid var(--vis-border); background: var(--vis-panel); }
+	.swatch-color { display: grid; gap: 2.5rem; min-height: 9rem; padding: 1rem; align-content: space-between; background: var(--swatch); color: var(--swatch-text); }
+	.swatch-color strong { font-size: 1rem; }
+	.swatch-color span { font-family: var(--sl-font-system-mono); font-size: 0.8rem; }
+	.swatch p { margin: 0; padding: 0.75rem 1rem 1rem; color: var(--vis-muted); font-size: 0.8rem; }
+</style>
