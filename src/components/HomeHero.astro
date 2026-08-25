@@ -1,0 +1,103 @@
+---
+interface HeroImage {
+	src: string;
+	alt?: string;
+}
+
+interface Props {
+	images?: HeroImage[];
+}
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const { images = [{ src: 'assets/assets/contests/2026/26正赛参赛图片/R1R2合体.jpeg' }] } = Astro.props;
+const resolvedImages = images.map((image) => ({
+	...image,
+	src: image.src.startsWith('/') || image.src.startsWith('http') ? image.src : `${base}${image.src}`,
+}));
+const darkLogo = `${base}assets/brand/team-lockup/队标加字反白.svg`;
+---
+
+<section class="vis-home-hero" aria-labelledby="vis-home-title">
+	<div class="vis-home-hero-media">
+		{resolvedImages.map((image, index) => (
+			<img
+				class="vis-home-hero-image"
+				class:list={{ 'is-active': index === 0 }}
+				data-home-hero-image
+				src={image.src}
+				alt={image.alt || ''}
+				loading={index === 0 ? 'eager' : 'lazy'}
+				decoding="async"
+			/>
+		))}
+		<div class="vis-home-hero-scanlines" aria-hidden="true"></div>
+		<div id="home-particles" class="vis-home-particles" aria-hidden="true"></div>
+	</div>
+	<div class="vis-home-hero-content">
+		<div class="vis-home-hero-status"><span aria-hidden="true"></span> WTR / VIS · BRAND SYSTEM</div>
+		<div class="vis-home-hero-lockup" aria-hidden="true">
+			<img class="vis-home-logo-dark" src={darkLogo} alt="" />
+		</div>
+		<h1 id="vis-home-title">南工问天<br /><span class="vis-home-title-accent">视觉形象识别系统</span></h1>
+		<p class="vis-home-typing" aria-live="polite"><span data-home-typing>SYSTEM ONLINE</span><span class="vis-home-caret" aria-hidden="true">_</span></p>
+		<p class="vis-home-description">品牌规范、赛事影像与制作资源的统一入口。</p>
+	</div>
+</section>
+
+<script>
+	import TypeIt from 'typeit';
+	import { tsParticles } from '@tsparticles/engine';
+	import { loadSlim } from '@tsparticles/slim';
+
+	const typingTarget = document.querySelector<HTMLElement>('[data-home-typing]');
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (typingTarget && !reducedMotion) {
+		new TypeIt(typingTarget, {
+			strings: ['SYSTEM ONLINE', 'VISUAL IDENTITY / SYSTEM', 'ASSETS READY / LIVE'],
+			speed: 58,
+			deleteSpeed: 34,
+			nextStringDelay: 1400,
+			breakLines: false,
+			loop: true,
+			waitUntilVisible: true,
+		}).go();
+	}
+
+	if (!reducedMotion) {
+		const heroImages = document.querySelectorAll<HTMLElement>('[data-home-hero-image]');
+		if (heroImages.length > 1) {
+			let activeIndex = 0;
+			window.setInterval(() => {
+				heroImages[activeIndex]?.classList.remove('is-active');
+				activeIndex = (activeIndex + 1) % heroImages.length;
+				heroImages[activeIndex]?.classList.add('is-active');
+			}, 6500);
+		}
+
+		void (async () => {
+			await loadSlim(tsParticles);
+			await tsParticles.load({
+				id: 'home-particles',
+				options: {
+					fullScreen: { enable: false },
+					fpsLimit: 50,
+					particles: {
+						number: { value: 34, density: { enable: true, width: 1200, height: 700 } },
+						color: { value: ['#58a5ec', '#00bfa6', '#ff5a36'] },
+						opacity: { value: { min: 0.18, max: 0.6 } },
+						size: { value: { min: 1, max: 2.8 } },
+						move: { enable: true, speed: 0.35, direction: 'none', outModes: { default: 'out' } },
+						links: { enable: true, distance: 145, opacity: 0.22, color: '#58a5ec', width: 1 },
+					},
+					interactivity: {
+						detectsOn: 'window',
+						events: { onHover: { enable: true, mode: 'grab' }, resize: true },
+						modes: { grab: { distance: 180, links: { opacity: 0.45 } } },
+					},
+					retina: { detectRetina: true },
+				},
+			});
+		})();
+	}
+</script>

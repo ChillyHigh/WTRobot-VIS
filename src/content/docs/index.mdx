@@ -4,27 +4,24 @@ description: 南工问天视觉识别规范与品牌素材库。
 template: splash
 hero:
   title: 南工问天视觉识别系统
-  tagline: 视觉识别系统与品牌资源库
-  image:
-    html: '<div class="vis-hero-logo" role="img" aria-label="南工问天队标加字"><img class="vis-hero-logo-dark" src="/WTRobot-VIS/assets/brand/team-lockup/队标加字反白.svg" alt=""><img class="vis-hero-logo-light" src="/WTRobot-VIS/assets/brand/team-lockup/队标加字.svg" alt=""></div>'
-  actions:
-    - text: 进入品牌规范
-      link: /WTRobot-VIS/brand/
-      icon: right-arrow
-    - text: 进入素材归档
-      link: /WTRobot-VIS/assets/
-      icon: open-book
-      variant: minimal
 ---
 
+import HomeHero from '../../components/HomeHero.astro';
 import SectionLink from '../../components/SectionLink.astro';
 import ColorSwatch from '../../components/ColorSwatch.astro';
 
+<HomeHero
+	images={[
+		{ src: 'assets/assets/contests/2026/26正赛参赛图片/R1R2合体.jpeg', alt: '机器人现场画面' },
+		{ src: 'assets/assets/contests/2026/26正赛参赛图片/对抗现场.jpeg', alt: '机器人现场画面' },
+	]}
+/>
+
 <div class="vis-section-links">
-	<SectionLink index="01" title="品牌规范" description="标志、字体、标准色与辅助图形的使用依据。" href="/WTRobot-VIS/brand/" />
-	<SectionLink index="02" title="素材归档" description="按年份、主题和用途组织的可预览源文件。" href="/WTRobot-VIS/assets/" />
-	<SectionLink index="03" title="应用规范" description="办公、宣传、数字媒体与活动现场的落地方式。" href="/WTRobot-VIS/guidelines/" />
-	<SectionLink index="04" title="周边设计" description="从效果图到制作说明的可复用周边资源。" href="/WTRobot-VIS/merch/" />
+	<SectionLink index="01" title="品牌规范" description="标志、字体与标准色" href="/WTRobot-VIS/brand/" />
+	<SectionLink index="02" title="素材归档" description="按年份归档的可下载素材" href="/WTRobot-VIS/assets/" />
+	<SectionLink index="03" title="应用规范" description="不同媒介的使用方式" href="/WTRobot-VIS/guidelines/" />
+	<SectionLink index="04" title="周边设计" description="效果图与制作源文件" href="/WTRobot-VIS/merch/" />
 </div>
 
 ## 标准色
