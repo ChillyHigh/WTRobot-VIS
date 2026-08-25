@@ -22,10 +22,17 @@ const isActive = (slug: string) => path === `/${slug}` || path.startsWith(`/${sl
 <div class="vis-header">
 	<div class="vis-title sl-flex">
 		<a class="vis-site-title" href={base} aria-label="南工问天 VIS 首页">
-			<img class="vis-lockup vis-lockup-dark" src={`${base}assets/brand/team-lockup/队标加字反白.svg`} alt="南工问天 VIS" />
-			<img class="vis-lockup vis-lockup-light" src={`${base}assets/brand/team-lockup/队标加字.svg`} alt="南工问天 VIS" />
+			<span class="vis-lockup-frame vis-lockup-frame-dark">
+				<img class="vis-lockup" src={`${base}assets/brand/team-lockup/队标加字反白.svg`} alt="南工问天 VIS" />
+			</span>
+			<span class="vis-lockup-frame vis-lockup-frame-light">
+				<img class="vis-lockup" src={`${base}assets/brand/team-lockup/队标加字.svg`} alt="南工问天 VIS" />
+			</span>
 			<span class="vis-title-divider" aria-hidden="true"></span>
-			<span class="vis-title-system">视觉形象识别系统</span>
+			<span class="vis-title-system">
+				<span class="vis-title-system-zh">视觉形象识别系统</span>
+				<span class="vis-title-system-en">VISUAL IDENTITY SYSTEM</span>
+			</span>
 		</a>
 	</div>
 	<nav class="vis-nav" aria-label="主要导航">
@@ -47,17 +54,20 @@ const isActive = (slug: string) => path === `/${slug}` || path.startsWith(`/${sl
 			display: grid;
 			grid-template-columns: auto minmax(0, 1fr) auto;
 			gap: clamp(0.75rem, 2vw, 2rem);
-			align-items: center;
 			height: 100%;
 		}
 		.vis-title { min-width: 0; }
-		.vis-site-title { display: inline-flex; align-items: center; column-gap: 0.3em; width: auto; height: 2.75rem; min-width: 0; text-decoration: none; white-space: nowrap; }
-		.vis-lockup { display: block; width: 11rem; height: 2.75rem; object-fit: contain; transform: translateY(-0.35rem); }
-		.vis-lockup-light { display: none; }
-		:global(:root[data-theme='light']) .vis-lockup-dark { display: none; }
-		:global(:root[data-theme='light']) .vis-lockup-light { display: block; }
-		.vis-title-divider { flex: 0 0 1px; width: 1px; height: 2.25rem; background: var(--vis-border-strong); transform: translateY(-0.35rem); }
-		.vis-title-system { display: inline-flex; align-items: center; width: max-content; max-width: none; height: 2.75rem; color: var(--vis-header-muted); font-size: 1.05rem; font-weight: 700; line-height: 1.2; white-space: nowrap; transform: translateY(-0.35rem); }
+		.vis-site-title { display: inline-flex; align-items: center; column-gap: 0.3em; width: auto; height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y)); min-width: 0; text-decoration: none; white-space: nowrap; }
+		.vis-lockup-frame { display: block; flex: 0 0 auto; height: 100%; aspect-ratio: 351.387321 / 85.010791; }
+		.vis-lockup-frame-light { display: none; }
+		.vis-lockup { display: block; width: 100%; height: 100%; object-fit: contain; }
+		:global(:root[data-theme='light']) .vis-lockup-frame-dark { display: none; }
+		:global(:root[data-theme='light']) .vis-lockup-frame-light { display: block; }
+		.vis-title-divider { flex: 0 0 1px; width: 1px; height: calc(100% - 0.25rem); background: var(--vis-border-strong);}
+		.vis-title-system { display: inline-flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 0.15rem; width: max-content; max-width: none; height: 100%; color: var(--vis-header-muted); font-size: 1.05rem; font-weight: 700; line-height: 1.2; white-space: nowrap;}
+		.vis-title-system-zh, .vis-title-system-en { display: block; width: 100%; }
+		.vis-title-system-zh { line-height: 1.1; }
+		.vis-title-system-en { font-size: 55%; line-height: 1; letter-spacing: 0.02em; text-align: justify; text-align-last: justify; }
 		.vis-nav {
 			display: flex;
 			justify-content: center;
@@ -96,13 +106,21 @@ const isActive = (slug: string) => path === `/${slug}` || path.startsWith(`/${sl
 			.vis-theme { display: none; }
 		}
 		@media (max-width: 50rem) {
-			.vis-header { grid-template-columns: minmax(0, 1fr) auto; padding-inline-start: calc(var(--sl-menu-button-size) + 0.75rem); }
-			.vis-nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; padding: 0.45rem 0 0.25rem;}
+			.vis-header { grid-template-columns: minmax(0, 1fr) auto; }
+			.vis-nav { display: none; }
 			.vis-tools { grid-column: 2; grid-row: 1; }
-			.vis-title-divider { height: 2.25rem; }
 		}
-		@media (max-width: 30rem) {
-			.vis-title-divider { height: 2.25rem; }
+	}
+</style>
+
+<style is:global>
+	@layer starlight.core {
+		/* Starlight renders the menu toggle outside the custom header. Keep it on the nav's trailing edge. */
+		@media (max-width: 50rem) {
+			starlight-menu-button button {
+				inset-inline-start: auto !important;
+				inset-inline-end: var(--sl-nav-pad-x) !important;
+			}
 		}
 	}
 </style>
@@ -118,9 +136,8 @@ const isActive = (slug: string) => path === `/${slug}` || path.startsWith(`/${sl
 		'.sidebar-content a',
 		'.sidebar-content summary',
 		'.sl-link-button',
-		'site-search button[data-open-modal]',
+		// 'site-search button[data-open-modal]',
 		'starlight-theme-select select',
-		'starlight-menu-button button',
 	].join(', ');
 
 	document.querySelectorAll<HTMLElement>(rippleSelector).forEach((surface) => {

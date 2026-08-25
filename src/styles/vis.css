@@ -127,7 +127,7 @@
 	.sl-markdown-content blockquote { border-inline-start-color: var(--vis-orange); background: color-mix(in srgb, var(--vis-orange) 7%, transparent); }
 	.sl-markdown-content table th { background: color-mix(in srgb, var(--vis-blue) 18%, var(--vis-panel)); }
 	.sl-markdown-content code { border-color: var(--vis-border); background: color-mix(in srgb, var(--vis-blue) 8%, var(--vis-panel)); }
-	.sl-markdown-content img { border: 1px solid var(--vis-border); }
+	/* .sl-markdown-content img { border: 1px solid var(--vis-border); } */
 	.hero { border-bottom: 1px solid var(--vis-border); }
 	/* The splash route keeps Starlight's no-sidebar behavior; the homepage hero is custom. */
 	body:has(.vis-home-hero) .hero { display: none; }
@@ -181,10 +181,6 @@
 	.vis-color-grid, .color-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; }
 	@media (max-width: 55rem) { .vis-color-grid, .color-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 	@media (max-width: 40rem) { .hero .vis-hero-logo { min-height: 9rem; padding: 1.5rem; } .vis-color-grid, .color-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-	@media (max-width: 50rem) { :root { --sl-nav-height: 6.5rem; } }
-	@media (max-width: 30rem) { :root { --sl-nav-height: 6.75rem; } }
-	@media (max-width: 50rem) {
-		mobile-starlight-toc { display: none; }
-		:root { --sl-mobile-toc-height: 0rem; }
-	}
+	@media (max-width: 50rem) { :root { --sl-nav-height: 4.5rem; } }
+	@media (max-width: 30rem) { :root { --sl-nav-height: 4.5rem; } }
 }
