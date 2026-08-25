@@ -18,7 +18,7 @@ const resolveFile = (file: string) =>
 {downloads.length > 0 && (
 	<div class="download-list" aria-label="下载文件">
 		{downloads.map((download) => (
-			<a class="download-button" href={resolveFile(download.file)} download>
+			<a class="download-button mdc-ripple-surface" href={resolveFile(download.file)} download>
 				<span>{download.label}</span>
 				{download.note && <small>{download.note}</small>}
 			</a>

@@ -9,7 +9,7 @@ interface Props {
 const { title, description, href, index } = Astro.props;
 ---
 
-<a class="section-link" href={href}>
+<a class="section-link mdc-ripple-surface" href={href}>
 	<span class="section-index">{index}</span>
 	<span class="section-copy">
 		<strong>{title}</strong>
@@ -21,10 +21,10 @@ const { title, description, href, index } = Astro.props;
 <style>
 	.section-link { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: start; padding: 1rem 0; border-top: 1px solid var(--vis-border); color: var(--vis-text); text-decoration: none; }
 	.section-link:last-child { border-bottom: 1px solid var(--vis-border); }
-	.section-link:hover .section-arrow, .section-link:focus-visible .section-arrow { color: var(--vis-orange); transform: translate(2px, -2px); }
+	.section-link:hover .section-arrow, .section-link:focus-visible .section-arrow { color: var(--vis-orange); }
 	.section-index { color: var(--vis-teal); font-family: var(--sl-font-system-mono); font-size: 0.8rem; }
 	.section-copy { display: grid; gap: 0.25rem; }
 	.section-copy strong { font-size: 1.05rem; }
 	.section-copy span { color: var(--vis-muted); font-size: 0.86rem; }
-	.section-arrow { color: var(--vis-blue); font-size: 1.2rem; transition: color 160ms ease, transform 160ms ease; }
+	.section-arrow { color: var(--vis-blue); font-size: 1.2rem; transition: color 160ms ease; }
 </style>

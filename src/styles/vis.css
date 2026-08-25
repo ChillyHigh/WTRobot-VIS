@@ -1,3 +1,5 @@
+@import '@material/ripple/dist/mdc.ripple.css';
+
 @layer starlight.core {
 	:root {
 		--vis-blue: #005bac;
@@ -12,7 +14,9 @@
 		--vis-border: rgba(215, 218, 221, 0.18);
 		--vis-border-strong: rgba(215, 218, 221, 0.35);
 		--vis-header-muted: #d7dadd;
-		--vis-header-border: rgba(215, 218, 221, 0.18);
+		--vis-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+		--vis-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+		--vis-motion-fast: 160ms;
 		--sl-color-accent-low: color-mix(in srgb, var(--vis-blue) 20%, var(--vis-carbon));
 		--sl-color-accent: var(--vis-blue);
 		--sl-color-accent-high: #58a5ec;
@@ -44,7 +48,6 @@
 		--vis-border: rgba(17, 24, 32, 0.16);
 		--vis-border-strong: rgba(17, 24, 32, 0.3);
 		--vis-header-muted: #26343d;
-		--vis-header-border: rgba(17, 24, 32, 0.16);
 		--sl-color-bg: #f7f8f8;
 		--sl-color-bg-nav: #ffffff;
 		--sl-color-bg-sidebar: #eef1f2;
@@ -72,6 +75,53 @@
 	}
 	.sidebar-content a[aria-current='page']:hover,
 	.sidebar-content a[aria-current='page']:focus { background: color-mix(in srgb, var(--vis-blue) 36%, var(--vis-panel)); color: var(--vis-text); }
+	.sidebar-content a,
+	.sidebar-content summary {
+		transition: background-color var(--vis-motion-fast) ease, color var(--vis-motion-fast) ease;
+	}
+	.sidebar-content a:not([aria-current='page']):focus-visible,
+	.sidebar-content summary:focus-visible {
+		background-color: color-mix(in srgb, var(--vis-blue) 12%, transparent);
+	}
+	.mdc-ripple-surface {
+		--mdc-ripple-hover-opacity: 0.07;
+		--mdc-ripple-focus-opacity: 0.14;
+		--mdc-ripple-press-opacity: 0.18;
+	}
+	.pagination-links a {
+		--mdc-ripple-color: var(--vis-orange);
+		transition: border-color var(--vis-motion-fast) ease, background-color var(--vis-motion-fast) ease;
+	}
+	.pagination-links a:focus-visible {
+		border-color: var(--vis-orange);
+		background-color: color-mix(in srgb, var(--vis-orange) 7%, transparent);
+	}
+	@media (hover: hover) and (pointer: fine) {
+		.pagination-links a:hover {
+			border-color: var(--vis-blue);
+			background-color: color-mix(in srgb, var(--vis-blue) 7%, transparent);
+		}
+	}
+	@media (hover: hover) and (pointer: fine) {
+		.sidebar-content a:not([aria-current='page']):hover,
+		.sidebar-content summary:hover {
+			background-color: color-mix(in srgb, var(--vis-blue) 12%, transparent);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.mdc-ripple-surface::before,
+		.mdc-ripple-surface::after {
+			animation-duration: 1ms !important;
+			transition-duration: 1ms !important;
+		}
+		.vis-nav a,
+		.sidebar-content a,
+		.sidebar-content summary,
+		.download-button,
+		.section-arrow {
+			transition-duration: 1ms !important;
+		}
+	}
 	.sl-markdown-content a:not([class]) { color: var(--vis-teal); text-decoration-color: color-mix(in srgb, var(--vis-teal) 50%, transparent); }
 	.sl-markdown-content a:not([class]):hover { color: var(--vis-orange); text-decoration-color: var(--vis-orange); }
 	.sl-markdown-content blockquote { border-inline-start-color: var(--vis-orange); background: color-mix(in srgb, var(--vis-orange) 7%, transparent); }
@@ -79,13 +129,20 @@
 	.sl-markdown-content code { border-color: var(--vis-border); background: color-mix(in srgb, var(--vis-blue) 8%, var(--vis-panel)); }
 	.sl-markdown-content img { border: 1px solid var(--vis-border); }
 	.hero { border-bottom: 1px solid var(--vis-border); }
-	.vis-home-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: end; padding: 2rem 0 2.5rem; }
-	.vis-eyebrow { margin: 0 0 1rem; color: var(--vis-orange); font-family: var(--sl-font-system-mono); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; }
-	.vis-home-intro h2 { max-width: 38rem; margin: 0; border: 0; padding: 0; font-size: clamp(2rem, 5vw, 4.25rem); line-height: 1.05; letter-spacing: 0; }
-	.vis-lede { max-width: 38rem; margin: 1.25rem 0 0; color: var(--vis-muted); font-size: 1rem; line-height: 1.8; }
-	.vis-home-mark { display: grid; place-items: center; width: clamp(6rem, 15vw, 12rem); aspect-ratio: 1; border: 1px solid var(--vis-blue); color: var(--vis-teal); font-family: var(--sl-font-system-mono); font-size: clamp(1.7rem, 4vw, 3rem); font-weight: 800; letter-spacing: 0.1em; }
+	.hero .vis-hero-logo { display: grid; place-items: center; width: 100%; min-height: 12rem; padding: 2rem; background: var(--vis-panel); }
+	.hero .vis-hero-logo img { display: block; width: min(100%, 25rem); height: auto; }
+	.hero .vis-hero-logo-light { display: none; }
+	:root[data-theme='light'] .hero .vis-hero-logo { background: #fff; }
+	:root[data-theme='light'] .hero .vis-hero-logo-dark { display: none; }
+	:root[data-theme='light'] .hero .vis-hero-logo-light { display: block; }
 	.vis-section-links { margin: 1rem 0 3rem; }
 	.vis-color-grid, .color-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; }
 	@media (max-width: 55rem) { .vis-color-grid, .color-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-	@media (max-width: 40rem) { .vis-home-intro { grid-template-columns: 1fr; } .vis-home-mark { width: 6rem; } .vis-color-grid, .color-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+	@media (max-width: 40rem) { .hero .vis-hero-logo { min-height: 9rem; padding: 1.5rem; } .vis-color-grid, .color-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+	@media (max-width: 50rem) { :root { --sl-nav-height: 6.5rem; } }
+	@media (max-width: 30rem) { :root { --sl-nav-height: 6.75rem; } }
+	@media (max-width: 50rem) {
+		mobile-starlight-toc { display: none; }
+		:root { --sl-mobile-toc-height: 0rem; }
+	}
 }
