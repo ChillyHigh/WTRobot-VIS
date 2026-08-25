@@ -4,8 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://chillyhigh.github.io',
-	base: '/WTRobot-VIS',
+	site: 'https://vis.wtrobot.moe',
+	base: '/',
 	output: 'static',
 	integrations: [
 		starlight({
