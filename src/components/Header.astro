@@ -122,6 +122,14 @@ const isActive = (slug: string) => path === `/${slug}` || path.startsWith(`/${sl
 				inset-inline-end: var(--sl-nav-pad-x) !important;
 			}
 		}
+		@media (min-width: 50rem) {
+			site-search dialog {
+				inset-inline-start: 50% !important;
+				inset-inline-end: auto !important;
+				margin: 4rem 0 auto !important;
+				transform: translateX(-50%);
+			}
+		}
 	}
 </style>
 
