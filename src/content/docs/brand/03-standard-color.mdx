@@ -1,0 +1,35 @@
+---
+title: 标准色
+description: 南工问天标准色、辅助色及配色结构。
+sidebar:
+  order: 6
+---
+
+import ColorSwatch from '../../../components/ColorSwatch.astro';
+import AssetCard from '../../../components/AssetCard.astro';
+
+问天蓝和凌天青是主要品牌色，信号橙用于强调和状态提示，碳黑与合金灰负责正文、结构和底色。
+
+<AssetCard title="标准色彩矢量表" fileType="SVG" preview="/assets/brand/标准色彩.svg" downloads={[{ label: '下载 SVG', file: '/assets/brand/标准色彩.svg' }]} />
+
+<div class="color-grid">
+	<ColorSwatch name="问天蓝" hex="#005CBA" description="Pantone 300 C：标题、导航、主要链接。" />
+	<ColorSwatch name="凌天青" hex="#00C4B3" description="Pantone 3265 C：分类、状态、信息提示。" />
+	<ColorSwatch name="信号橙" hex="#FF5D37" description="Pantone 171 C：少量强调、hover、当前项。" />
+	<ColorSwatch name="碳黑" hex="#0F1822" description="Pantone Black 6 C：正文、结构和深色底色。" />
+	<ColorSwatch name="合金灰" hex="#CED2D5" description="Pantone 427 C：辅助文字、边框和浅色底。" textColor="#0F1822" />
+</div>
+
+| 品牌色 | Pantone | RGB | HEX | CMYK |
+| --- | --- | --- | --- | --- |
+| 问天蓝 | Pantone 300 C | 0 / 92 / 186 | `#005CBA` | 90 / 64 / 0 / 0 |
+| 凌天青 | Pantone 3265 C | 0 / 196 / 179 | `#00C4B3` | 81 / 0 / 44 / 0 |
+| 信号橙 | Pantone 171 C | 255 / 93 / 55 | `#FF5D37` | 0 / 77 / 73 / 0 |
+| 碳黑 | Pantone Black 6 C | 15 / 24 / 34 | `#0F1822` | 92 / 85 / 73 / 62 |
+| 合金灰 | Pantone 427 C | 206 / 210 / 213 | `#CED2D5` | 23 / 15 / 14 / 0 |
+
+## 使用原则
+
+- 信号橙应少量使用，避免成为大面积背景色。
+- 深色背景上使用纯白或合金灰文字，保证信息清晰。
+- 标志文件保持原始矢量版本；网页 UI 的颜色以本页标准色为准。

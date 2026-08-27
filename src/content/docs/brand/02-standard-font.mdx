@@ -1,0 +1,24 @@
+---
+title: 标准字规范
+description: 南工问天中英文队名和校标组合的使用资源。
+sidebar:
+  order: 2
+---
+
+import AssetCard from '../../../components/AssetCard.astro';
+
+标准字是南工问天视觉识别系统中的重要身份元素，用于强化团队名称的识别度、正式感与传播一致性。横向组合是默认版本，纵向组合用于窄版面或竖向载体。
+
+使用时应保持中英文之间既定的比例、间距、对齐方式和视觉重心，不得随意压缩、拉伸、旋转、倾斜、描边、加阴影或改变标准色。
+
+## 字体规范
+
+页面、宣传物料和未使用转曲资产的延展排版中，中文与英文均主要使用思源黑体（Source Han Sans）。现有 SVG 文件中的标准字为正式转曲资产，应优先直接使用，不要重新输入或重绘。
+
+手册原文同时说明：英文标准字采用 Spectral SC ExtraBold 作为基础西文字体；中文标准字基于 AI 生成的原始字形方案，经人工对笔画结构、字形重心、连笔关系、边缘细节和整体气质调整后形成定制字形。因此，正式标准字以转曲 SVG 为准；思源黑体是网页和延展排版的主要替代字体。
+
+在浅色背景上优先使用问天蓝与碳黑组合；在深色背景或复杂图像背景上，应使用反白版本或增加足够留白，确保标准字清晰可读。小尺寸输出时，优先保证中文名称识别；当应用空间不足时，可改用简化组合或纯队标版本。
+
+	<AssetCard title="中文队名" fileType="SVG" preview="/assets/brand/wordmark/中文队名.svg" downloads={[{ label: '下载 SVG', file: '/assets/brand/wordmark/中文队名.svg' }]} />
+	<AssetCard title="中英队名横向组合" fileType="SVG" preview="/assets/brand/wordmark/中英队名.svg" downloads={[{ label: '下载 SVG', file: '/assets/brand/wordmark/中英队名.svg' }]} />
+	<AssetCard title="中英队名纵向组合" fileType="SVG" preview="/assets/brand/wordmark/中英队名纵向.svg" downloads={[{ label: '下载 SVG', file: '/assets/brand/wordmark/中英队名纵向.svg' }]} />

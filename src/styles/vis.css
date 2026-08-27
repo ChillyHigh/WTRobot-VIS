@@ -2,18 +2,18 @@
 
 @layer starlight.core {
 	:root {
-		--vis-blue: #005bac;
-		--vis-teal: #00bfa6;
-		--vis-orange: #ff5a36;
-		--vis-carbon: #111820;
-		--vis-alloy: #d7dadd;
+		--vis-blue: #005cba;
+		--vis-teal: #00c4b3;
+		--vis-orange: #ff5d37;
+		--vis-carbon: #0f1822;
+		--vis-alloy: #ced2d5;
 		--vis-text: #f5f7f8;
 		--vis-muted: #aeb7be;
 		--vis-panel: #172129;
 		--vis-preview: #202c34;
-		--vis-border: rgba(215, 218, 221, 0.18);
-		--vis-border-strong: rgba(215, 218, 221, 0.35);
-		--vis-header-muted: #d7dadd;
+		--vis-border: rgba(206, 210, 213, 0.18);
+		--vis-border-strong: rgba(206, 210, 213, 0.35);
+		--vis-header-muted: #ced2d5;
 		--vis-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 		--vis-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 		--vis-motion-fast: 160ms;
@@ -26,7 +26,7 @@
 		--sl-color-text: var(--vis-text);
 		--sl-color-text-accent: #66b1f4;
 		--sl-color-hairline: var(--vis-border);
-		--sl-color-hairline-light: rgba(215, 218, 221, 0.1);
+		--sl-color-hairline-light: rgba(206, 210, 213, 0.1);
 		--sl-color-white: #f5f7f8;
 		--sl-color-gray-1: var(--vis-text);
 		--sl-color-gray-2: var(--vis-muted);
@@ -41,21 +41,21 @@
 	}
 
 	:root[data-theme='light'] {
-		--vis-text: #111820;
+		--vis-text: #0f1822;
 		--vis-muted: #4d5b64;
 		--vis-panel: #ffffff;
 		--vis-preview: #f0f3f4;
-		--vis-border: rgba(17, 24, 32, 0.16);
-		--vis-border-strong: rgba(17, 24, 32, 0.3);
+		--vis-border: rgba(15, 24, 34, 0.16);
+		--vis-border-strong: rgba(15, 24, 34, 0.3);
 		--vis-header-muted: #26343d;
 		--sl-color-bg: #f7f8f8;
 		--sl-color-bg-nav: #ffffff;
 		--sl-color-bg-sidebar: #eef1f2;
 		--sl-color-text: var(--vis-text);
-		--sl-color-text-accent: #005bac;
+		--sl-color-text-accent: #005cba;
 		--sl-color-hairline: var(--vis-border);
-		--sl-color-hairline-light: rgba(17, 24, 32, 0.09);
-		--sl-color-gray-1: #111820;
+		--sl-color-hairline-light: rgba(15, 24, 34, 0.09);
+		--sl-color-gray-1: #0f1822;
 		--sl-color-gray-2: #4d5b64;
 		--sl-color-gray-3: #66747c;
 		--sl-color-gray-4: #a3adb2;
@@ -131,7 +131,7 @@
 	.hero { border-bottom: 1px solid var(--vis-border); }
 	/* The splash route keeps Starlight's no-sidebar behavior; the homepage hero is custom. */
 	body:has(.vis-home-hero) .hero { display: none; }
-	body:has(.vis-home-hero) { --vis-home-text: #f5f7f8; --vis-home-muted: #aeb7be; --vis-home-panel: #172129; --vis-home-border: rgba(215, 218, 221, 0.18); background: var(--vis-carbon); color: var(--vis-home-text); overflow-x: hidden; }
+	body:has(.vis-home-hero) { --vis-home-text: #f5f7f8; --vis-home-muted: #aeb7be; --vis-home-panel: #172129; --vis-home-border: rgba(206, 210, 213, 0.18); background: var(--vis-carbon); color: var(--vis-home-text); overflow-x: hidden; }
 	body:has(.vis-home-hero) main,
 	body:has(.vis-home-hero) main .content-panel,
 	body:has(.vis-home-hero) main .sl-container { background: var(--vis-carbon); color: var(--vis-home-text); }

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 543.113425 382.748156">
+  <defs>
+    <style>
+      .d {
+        letter-spacing: .000081em;
+      }
+
+      .e {
+        fill: #231815;
+      }
+
+      .e, .f {
+        font-family: SourceHanSansSC-Medium-GBpc-EUC-H, 'Source Han Sans SC';
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .g, .h {
+        font-family: SourceHanSansSC-Bold-GBpc-EUC-H, 'Source Han Sans SC';
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .g, .f {
+        fill: #fff;
+      }
+
+      .i {
+        letter-spacing: -.056071em;
+      }
+
+      .j {
+        fill: #00c4b3;
+      }
+
+      .h {
+        fill: #10171f;
+      }
+
+      .k {
+        fill: #ff5d37;
+      }
+
+      .l {
+        fill: #005cba;
+      }
+
+      .m {
+        fill: #ced2d5;
+      }
+
+      .n {
+        fill: #0f1822;
+      }
+
+      .o {
+        letter-spacing: -.027995em;
+      }
+    </style>
+  </defs>
+  <g id="c" data-name="4">
+    <rect class="l" width="108.622685" height="382.748156"/>
+    <text class="g" transform="translate(27.310998 33.101177)"><tspan x="0" y="0">问天蓝</tspan></text>
+    <text class="f" transform="translate(15.394983 255.22752)"><tspan x="0" y="0">HEX</tspan><tspan x="0" y="14.400391">#005CBA</tspan><tspan x="0" y="32.400391">RGB</tspan><tspan x="0" y="46.799805">0 92 186</tspan><tspan x="0" y="64.799805">CMYK</tspan><tspan x="0" y="79.200195">90 64 0 0</tspan><tspan class="i" x="0" y="97.200195">P</tspan><tspan class="d" x="7.103516" y="97.200195">AN</tspan><tspan class="o" x="23.375977" y="97.200195">T</tspan><tspan x="30.37207" y="97.200195">ONE</tspan><tspan x="0" y="111.599609">300 C</tspan></text>
+    <rect class="j" x="108.622685" width="108.622685" height="382.748156"/>
+    <text class="g" transform="translate(135.933801 33.101177)"><tspan x="0" y="0">凌天青</tspan></text>
+    <text class="f" transform="translate(124.017785 255.22752)"><tspan x="0" y="0">HEX</tspan><tspan x="0" y="14.400391">#00C4B3</tspan><tspan x="0" y="32.400391">RGB</tspan><tspan x="0" y="46.799805">0 196 179</tspan><tspan x="0" y="64.799805">CMYK</tspan><tspan x="0" y="79.200195">81 0 44 0</tspan><tspan class="i" x="0" y="97.200195">P</tspan><tspan class="d" x="7.103516" y="97.200195">AN</tspan><tspan class="o" x="23.375977" y="97.200195">T</tspan><tspan x="30.37207" y="97.200195">ONE</tspan><tspan x="0" y="111.599609">3265 C</tspan></text>
+    <rect class="k" x="217.24537" width="108.622685" height="382.748156"/>
+    <text class="g" transform="translate(244.556421 33.101177)"><tspan x="0" y="0">信号橙</tspan></text>
+    <text class="f" transform="translate(232.640405 255.22752)"><tspan x="0" y="0">HEX</tspan><tspan x="0" y="14.400391">#FF5D37</tspan><tspan x="0" y="32.400391">RGB</tspan><tspan x="0" y="46.799805">255 93 55</tspan><tspan x="0" y="64.799805">CMYK</tspan><tspan x="0" y="79.200195">0 77 73 0</tspan><tspan class="i" x="0" y="97.200195">P</tspan><tspan class="d" x="7.103516" y="97.200195">AN</tspan><tspan class="o" x="23.375977" y="97.200195">T</tspan><tspan x="30.37207" y="97.200195">ONE</tspan><tspan x="0" y="111.599609">171 C</tspan></text>
+    <rect class="n" x="325.868055" width="108.622685" height="382.748156"/>
+    <text class="g" transform="translate(362.179223 33.101177)"><tspan x="0" y="0">碳黑</tspan></text>
+    <text class="f" transform="translate(341.263208 255.22752)"><tspan x="0" y="0">HEX</tspan><tspan x="0" y="14.400391">#0F1822</tspan><tspan x="0" y="32.400391">RGB</tspan><tspan x="0" y="46.799805">15 24 34</tspan><tspan x="0" y="64.799805">CMYK</tspan><tspan x="0" y="79.200195">92 85 73 62</tspan><tspan class="i" x="0" y="97.200195">P</tspan><tspan class="d" x="7.103516" y="97.200195">AN</tspan><tspan class="o" x="23.375977" y="97.200195">T</tspan><tspan x="30.37207" y="97.200195">ONE</tspan><tspan x="0" y="111.599609">Black 6 C</tspan></text>
+    <rect class="m" x="434.49074" width="108.622685" height="382.748156"/>
+    <text class="h" transform="translate(461.801782 33.101177)"><tspan x="0" y="0">合金灰</tspan></text>
+    <text class="e" transform="translate(449.885766 255.22752)"><tspan x="0" y="0">HEX</tspan><tspan x="0" y="14.400391">#CED2D5</tspan><tspan x="0" y="32.400391">RGB</tspan><tspan x="0" y="46.799805">206 210 213</tspan><tspan x="0" y="64.799805">CMYK</tspan><tspan x="0" y="79.200195">23 15 14 0</tspan><tspan class="i" x="0" y="97.200195">P</tspan><tspan class="d" x="7.103516" y="97.200195">AN</tspan><tspan class="o" x="23.375977" y="97.200195">T</tspan><tspan x="30.37207" y="97.200195">ONE</tspan><tspan x="0" y="111.599609">427 C</tspan></text>
+  </g>
+</svg>

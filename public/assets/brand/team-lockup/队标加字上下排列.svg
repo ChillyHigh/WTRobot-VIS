@@ -3,15 +3,15 @@
   <defs>
     <style>
       .e {
-        fill: #0b57a0;
+        fill: #005cba;
       }
 
       .f {
-        fill: #10171f;
+        fill: #0f1822;
       }
 
       .g {
-        fill: #1db39d;
+        fill: #00c4b3;
       }
     </style>
   </defs>
