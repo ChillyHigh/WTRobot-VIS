@@ -34,18 +34,32 @@
 
 ### 2. 第一次获取仓库
 
-先安装 Git，并向仓库管理员获取仓库地址和访问权限。然后执行：
+普通成员通常没有官方仓库的直接写入权限，请先在 GitHub 网页打开 `ChillyHigh/WTRobot-VIS`，点击 **Fork**，创建属于自己的副本。之后克隆自己的 Fork：
 
 ```powershell
-git clone https://github.com/ChillyHigh/WTRobot-VIS.git
+git clone https://github.com/<你的GitHub用户名>/WTRobot-VIS.git
 cd WTRobot-VIS
+git remote add upstream https://github.com/ChillyHigh/WTRobot-VIS.git
 ```
 
-如果本地已经有仓库，不需要再次克隆。开始工作前先同步主分支：
+这里约定：
+
+- `origin`：你自己的 Fork，用来推送分支。
+- `upstream`：官方仓库，用来同步最新代码和提交 Pull Request。
+
+如果本地已经克隆的是官方仓库，不需要重新克隆。先将远程地址调整为 Fork：
 
 ```powershell
+git remote rename origin upstream
+git remote add origin https://github.com/<你的GitHub用户名>/WTRobot-VIS.git
+```
+
+开始工作前先同步官方主分支：
+
+```powershell
+git fetch upstream
 git switch main
-git pull --ff-only
+git pull --ff-only upstream main
 ```
 
 不要在已有未提交修改时执行 `git pull`。先用下面的命令确认工作区状态：
@@ -212,10 +226,18 @@ git status
 
 ```powershell
 git commit -m "assets: add 2027 recruitment photos"
-git push -u origin assets/2027-recruitment
+git push -u origin update-assets
 ```
 
-在代码托管平台上为该分支创建合并请求或 Pull Request，请网站维护人员检查并合并。合并到 `main` 后，站点会自动构建和发布。
+推送前可以确认 `origin` 确实是自己的 Fork：
+
+```powershell
+git remote -v
+```
+
+然后在 GitHub 上打开自己 Fork 中的 `update-assets` 分支，点击 **Contribute** 或 **Open pull request**，创建 Pull Request。目标仓库选择 `ChillyHigh/WTRobot-VIS`，目标分支选择 `main`，请网站维护人员检查并合并。合并到官方 `main` 后，站点会自动构建和发布。
+
+只有已经获得官方仓库写入权限的成员，才可以将 `origin` 指向官方仓库并直接推送；普通成员不应尝试直接推送官方仓库。
 
 如果 `git pull`、`git push` 或合并时出现冲突，不要强行覆盖文件，也不要使用 `git reset --hard`。保留终端错误信息并联系网站维护人员。
 
