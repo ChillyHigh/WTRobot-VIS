@@ -10,11 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "@astrojs/starlight": "^0.41.7",
     "@material/ripple": "^14.0.0",
     "@tsparticles/slim": "^4.3.2",
     "astro": "^7.1.6",
     "sharp": "^0.35.3",
-    "typeit": "^8.8.7"
+    "typeit": "^8.8.7",
+    "typescript": "^6.0.3"
   }
 }
