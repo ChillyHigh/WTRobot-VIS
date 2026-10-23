@@ -379,8 +379,8 @@ Header 使用 Material Ripple 提供点击反馈；HomeHero 使用 TypeIt 和 ts
 路径关系示例：
 
 ```text
-仓库文件：public/assets/brand/team-mark/问天蓝队标.svg
-页面路径：/assets/brand/team-mark/问天蓝队标.svg
+仓库文件：public/assets/brand/team-lockup/logo.svg
+页面路径：/assets/brand/team-lockup/logo.svg
 ```
 
 维护要求：

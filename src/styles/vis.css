@@ -158,7 +158,7 @@
 	.vis-home-hero-status { display: inline-flex; align-items: center; gap: 0.55rem; color: #a7d7ff; font: 700 0.73rem/1.2 var(--sl-font-system-mono); letter-spacing: 0.08em; }
 	.vis-home-hero-status span { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--vis-orange); box-shadow: 0 0 0 0.25rem rgba(255, 90, 54, 0.15); }
 	.vis-home-hero-lockup { display: flex; align-items: center; width: min(16rem, 54vw); margin: 2rem 0 1.7rem; }
-	.vis-home-hero-lockup img { display: block; width: 100%; height: auto; }
+	.vis-home-hero-lockup img { display: block; width: 100%; height: auto; filter: invert(1); }
 	.vis-home-hero h1 { margin: 0; color: #fff !important; font-size: clamp(2.5rem, 6vw, 5.7rem); font-weight: 800; letter-spacing: 0; line-height: 0.98; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.48); }
 	.vis-home-title-accent { color: #8bcaff; }
 	.vis-home-typing { display: flex; align-items: baseline; min-height: 1.65rem; margin: 1.6rem 0 0; color: var(--vis-orange) !important; font: 700 clamp(0.82rem, 1.4vw, 1rem)/1.4 var(--sl-font-system-mono); letter-spacing: 0.06em; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45); }

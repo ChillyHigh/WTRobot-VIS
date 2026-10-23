@@ -14,7 +14,7 @@ const resolvedImages = images.map((image) => ({
 	...image,
 	src: image.src.startsWith('/') || image.src.startsWith('http') ? image.src : `${base}${image.src}`,
 }));
-const darkLogo = `${base}assets/brand/team-lockup/队标加字反白.svg`;
+const logo = `${base}assets/brand/team-lockup/logo.svg`;
 ---
 
 <section class="vis-home-hero" aria-labelledby="vis-home-title">
@@ -36,7 +36,7 @@ const darkLogo = `${base}assets/brand/team-lockup/队标加字反白.svg`;
 	<div class="vis-home-hero-content">
 		<div class="vis-home-hero-status"><span aria-hidden="true"></span> WTR / VIS · BRAND SYSTEM</div>
 		<div class="vis-home-hero-lockup" aria-hidden="true">
-			<img class="vis-home-logo-dark" src={darkLogo} alt="" />
+			<img src={logo} width="432" height="109" alt="" />
 		</div>
 		<h1 id="vis-home-title">南工问天<br /><span class="vis-home-title-accent">视觉形象识别系统</span></h1>
 		<p class="vis-home-typing" aria-live="polite"><span data-home-typing>SYSTEM ONLINE</span><span class="vis-home-caret" aria-hidden="true">_</span></p>
